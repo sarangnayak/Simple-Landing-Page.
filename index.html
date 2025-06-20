@@ -1,48 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Minimal Digital Clock with Weather & Music</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="clock-container">
-    <!-- Dark Mode Toggle -->
-    <label class="dark-toggle">
-      <input type="checkbox" id="darkModeToggle" />
-      <span>Dark Mode</span>
-    </label>
+    <!-- Navbar -->
+     <!-- Navbar -->
+<nav>
+  <div class="left">
+    <a href="/">Sarang Nayak</a>
+  </div>
+  <div class="right">
+    <a href="https://github.com/sarangnayakbala" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-github-alt"></i>
+      <span>Github</span>
+    </a>
 
-    <div id="clock">--:--:--</div>
-    <div id="date">--/--/----</div>
+    <a href="https://www.linkedin.com/in/nayaksarang?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BmUIw%2BCnARQabSE21mqel9g%3D%3D" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-linkedin"></i>
+      <span>Linkedin</span>
+    </a>
 
-    <div class="location" id="location">Loading location...</div>
+    <!-- Apple Music Link -->
+    <a href="https://music.apple.com/profile/sarangnayakbala" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-music"></i>
+      <span>Apple Music</span>
+    </a>
 
-    <div class="weather">
-      <!-- Spinner -->
-      <div id="spinner" class="spinner" style="display:none;"></div>
-      <img id="weather-icon" src="" alt="Weather Icon" style="display:none;" />
-      <div id="weather-desc"></div>
+    <a href="mailto:sarangnayak268@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Email</span>
+    </a>
+  </div>
+</nav>
+
+     <main>
+        <!--SECTION 1: SARANG -->
+        <section class="hero-section">
+            <div class="text">
+                <h2>Hallo, Ich bin Sarang 👋🏻</h2>
+                <p>Full Stack Developer | Java Backend Specialist (Spring Boot, REST APIs) | MERN Stack Expert | Competitive Programmer | Scalable Web App Enthusiast 🧑🏻‍💻♟️🏋️‍♀️🏸</p>
+
+                <div class="links">
+                    <a href="#skills">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skills</span>
+                    </a>
+
+                    <a href="#testimony">
+                        <i class="fa-solid fa-pen"></i>
+                        <span>Testimony</span>
+                    </a>
+
+                    <a href="#skills">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            <div class="headshot">
+                <img src="images/hero-headshot.webp" alt="Sarang Nayak Bala">
+            </div>
+        </section>
+
+        <!--SECTION 2: SKILLS -->
+        <section id="skills" class="skills-section">
+            <h2>Skills</h2>
+            <div class="text">
+                <p>
+                    I am a Full Stack Web Developer with a focus on backend development. 
+                    I have experience working with the MERN stack (MongoDB, Express.js, React, Node.js) 
+                    and Java. My skills include building scalable systems, designing efficient architectures, and developing APIs.<br/>
+                </p>
+            </div>
+            <div class="cells">
+                <div class="cell">
+                    <img src="./images/html-logo.webp" alt="html logo">
+                    <span>HTML</span>
+                </div>
+
+                <div class="cell">
+                    <img src="./images/css-logo.webp" alt="css logo">
+                    <span>CSS</span>
+                </div>
+
+                <div class="cell">
+                    <img src="./images/javascript-logo.webp" alt="java script logo">
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="cell">
+                    <img src="./images/node-logo.webp" alt="node logo">
+                    <span>Node.js</span>
+                </div>
+
+                <div class="cell">
+                    <img src="./images/react-logo.webp" alt="react logo">
+                    <span>React.js</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TESTIMONY -->
+<section id="testimony" class="testimony-section">
+    <h2>Testimony</h2>
+
+    <div class="group">
+        <div class="person-details">
+            <img src="./images/image47.jpeg" alt="Image of Sarang">
+            <p><strong>Sarang</strong></p>
+            <p>
+                I'm Software Developer.
+            </p>
+        </div>
+        <div class="text">
+            <p>
+                As a fresher, I am eager to contribute to meaningful projects, learn from experienced professionals, and grow in this field. My goal is to deliver secure, reliable, and well-designed software solutions.
+            </p>
+            <p>
+                The IDEs for Development and Competitive Programming I use include:
+                Visual Studio Code, WebStorm, Brackets, IntelliJ IDEA, Eclipse IDE, NetBeans, Spring Tool Suite (STS), CLion, CodeBlocks, Geany, Replit, PyCharm, Atom.
+            </p>
+        </div>
+    </div>
+</section>
+
+        <!--SECTION 4: CONTACT -->
+<section id="contact" class="contact-section">
+  <h2>Contact</h2>
+
+  <div class="group">
+    <div class="text">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, accusamus!
     </div>
 
-    <input type="text" id="cityInput" placeholder="Search city" aria-label="City name" />
-    <button id="getWeatherBtn">Get Weather</button>
-  </div>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
 
-  <!-- Apple Music Playlist Embed -->
-  <div class="music-embed">
-    <iframe
-      allow="autoplay *; encrypted-media *;"
-      frameborder="0"
-      height="450"
-      style="width:100%; max-width:660px; overflow:hidden; background:transparent;"
-      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-      src="https://embed.music.apple.com/in/playlist/country-music/pl.u-55D6676U6LJWPol"
-    ></iframe>
-  </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
 
-  <script src="script.js"></script>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+     </main>
 </body>
 </html>
