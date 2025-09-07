@@ -1,7 +1,11 @@
+/* === VARIABLES & GLOBAL STYLES === */
 :root {
-    --text-color: #1a1c20;
-    --link-color: #4a76ee;
-    --background-color: #F0EBE3;
+    --bg-color: #f8f9fa;
+    --primary-text-color: #212529;
+    --secondary-text-color: #6c757d;
+    --accent-color: #007bff;
+    --card-color: #ffffff;
+    --border-color: #dee2e6;
 }
 
 * {
@@ -15,349 +19,274 @@ html {
 }
 
 body {
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
     font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color);
-    min-width: 1400px;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
-a {
-    color: var(--link-color);
-    text-decoration: none;
+section {
+    padding: 6rem 0;
 }
 
-/* NAVBAR */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* === ANIMATIONS === */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === NAVBAR === */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    height: 80px;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    transition: box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav .left a {
-    color: var(--text-color);
-    font-size: 22px;
+    font-size: 1.5rem;
     font-weight: 600;
+    color: var(--primary-text-color);
+    text-decoration: none;
 }
 
 nav .right a {
-    color: var(--text-color);
-    margin: 0 10px;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-nav .right a:last-child {
-    color: var(--background-color);
-    background-color: var(--text-color);
-    padding: 5px 15px;
-    border-radius: 5px;
+nav .right a:hover {
+    color: var(--accent-color);
 }
 
-nav .right a span {
-    margin-left: 5px;
-}
-
-/* Section 1 - Hero */
+/* === HERO SECTION === */
 .hero-section {
     display: flex;
-    justify-content: space-between;
-    padding: 0 50px;
-    margin: 50px 0 100px;
-    gap: 40px;
-}
-
-.hero-section .text {
-    flex: 5;
+    align-items: center;
+    gap: 4rem;
+    min-height: 90vh;
 }
 
 .hero-section .text h2 {
-    font-size: 45px;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
-.hero-section .text .links {
-    margin-top: 25px;
+.hero-section .text p {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 2.5rem;
 }
 
-.hero-section .text .links a {
-    display: inline-block;
-    padding: 5px 10px;
-    border: 2px solid var(--link-color);
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    transition: 1s;
+.hero-section .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.hero-section .text .links a:hover {
-    color: var(--text-color);
-    border: 2px solid var(--text-color);
-}
-
-.hero-section .headshot {
-    flex: 2;
-    justify-content: right;
+.hero-section .links a:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
 }
 
 .hero-section .headshot img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--card-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Section 2 - Skills */
-.skills-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
-
-.skills-section h2 {
-    text-align: center;
-    font-size: 35px;
-}
-
+/* === SKILLS SECTION === */
 .skills-section .text {
     text-align: center;
-    font-size: 19px;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    color: var(--secondary-text-color);
 }
 
 .skills-section .cells {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
 }
 
-.skills-section .cells .cell {
+.skills-section .cell {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    width: 200px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: 1.5px solid #d3d3d3;
-    border-radius: 6px;
-}
-
-.skills-section .cells .cell img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    border-radius: 2px;
-}
-
-.skills-section .cells .cell span {
-    font-size: 18px;
-}
-
-/* Section 3 - Testimony */
-.testimony-section {
-    padding: 50px 40px;
-    /* background-color: #fff; */
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimony-section h2 {
-    font-size: 35px;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #333;
+.skills-section .cell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.testimony-section .group {
+.skills-section .cell img {
+    width: 60px;
+    height: 60px;
+}
+
+/* === TESTIMONY & CONTACT SECTION === */
+.testimony-section .group, .contact-section .group {
     display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: flex-start;
+    background-color: var(--card-color);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
-
-.testimony-section .group .person-details {
+.person-details {
     text-align: center;
-    flex: 2;
-    min-width: 250px;
+    flex-shrink: 0;
 }
-
-.testimony-section .group .person-details img {
-    width: 200px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+.person-details img {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.testimony-section .text p {
+    color: var(--secondary-text-color);
+}
+.testimony-section .text p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+.contact-section .text, .contact-section a {
+    color: var(--secondary-text-color);
+}
+.contact-section a {
+    color: var(--accent-color);
 }
 
-.testimony-section .group .person-details p {
+/* === FORM === */
+form {
+    width: 100%;
+}
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-text-color);
     font-weight: 600;
 }
-
-.testimony-section .group .person-details p:last-child {
-    font-weight: normal;
-}
-
-.person-details p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #555;
-}
-
-.testimony-section .group .text {
-    flex: 8;
-    min-width: 300px;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #444;
-}
-
-/* =====================
-   Responsive Media Queries
-   ===================== */
-
-/* For screens ≤ 850px */
-@media (max-width: 850px) {
-    .testimony-section .group {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .testimony-section .group .text {
-        font-size: 16px;
-    }
-}
-/* Section: 4 Contact */
-.contact-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
-
-.contact-section h2 {
-    font-size: 35px;
-}
-
-.contact-section .group {
-    display: flex;
-    gap: 50px;
-}
-
-.contact-section .group .text {
-    flex: 3;
-    margin-top: 20px;
-}
-
-.contact-section .group form {
-    flex: 3;
-    display: flex;
-    flex-direction: column; /* Added to stack inputs vertically */
-}
-
-/* Fix this selector: you had `form text` which does not exist in HTML */
-/* It should be textarea instead of 'text' */
-.contact-section .group form input,
-.contact-section .group form textarea {
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    background-color: #f1f3f5;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    border: 2px solid var(--link-color);
-    background-color: transparent;
-    padding: 10px;
-    margin-bottom: 15px;
+}
+form input:focus, form textarea:focus {
     outline: none;
-    resize: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
-
-.contact-section .group form button {
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    color: #cecece;
-    background-color: var(--link-color);
+form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-color);
     border: none;
-    height: 50px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 2.1s;
-    filter: brightness(.9);
+    transition: background-color 0.3s ease;
+}
+form button:hover {
+    background-color: #0056b3;
 }
 
-/* Responsive styles */
-@media (max-width: 740px) {
+/* === RESPONSIVENESS === */
+@media (max-width: 900px) {
+    .hero-section, .testimony-section .group, .contact-section .group {
+        flex-direction: column;
+    }
     .hero-section {
-        flex-direction: column-reverse;
-        align-items: center;
         text-align: center;
     }
-
     .hero-section .text h2 {
-        font-size: 32px;
-    }
-
-    .hero-section .headshot img {
-        width: 250px;
-        height: 250px;
-    }
-
-    /* Section: 3 testimony */
-    .testimony-section h2 {
         text-align: center;
-    }
-
-    .testimony-section .group {
-        flex-direction: column;
-    }
-
-    /* Section 4 contact */
-    .contact-section .group {
-        flex-direction: column;
     }
 }
-
-/* For screens ≤ 600px */
 @media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
     nav {
-        padding: 0 20px;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
     }
-
-    nav .right a {
-        font-size: 22px;
+    main {
+        padding: 0 1rem;
     }
-
-    nav .right a:last-child {
-        color: var(--text-color);
-        background-color: transparent;
-        padding: 0;
+    section {
+        padding: 4rem 0;
     }
-
-    nav .right a span {
-        display: none;
+    h2 {
+        font-size: 2rem;
     }
-
-    .hero-section {
-        padding: 0 20px;
-    }
-
     .hero-section .text h2 {
-        font-size: 30px;
+        font-size: 2.5rem;
     }
-
-    .skills-section {
-        padding: 0 20px;
-    }
-
-    .skills-section .cells .cell {
-        font-size: 16px;
-    }
-
-    /* Section 3 testimony */
-    .testimony-section {
-        padding: 0 20px;
-    }
-
-    .person-details img {
+    .hero-section .headshot img {
         width: 200px;
         height: 200px;
     }
-
-    .testimony-section h2 {
-        font-size: 28px;
-    }
-
-    .contact-section {
-        padding: 0 20px;
-    }
 }
-
