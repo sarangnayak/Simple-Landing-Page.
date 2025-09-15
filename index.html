@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic meta setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarang Nayak | Portfolio</title>
 
+  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts preconnect for better performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Poppins font -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -19,8 +27,12 @@
 </head>
 <body>
 
+  <!-- ===== NAVIGATION BAR ===== -->
   <nav>
+    <!-- Left side: portfolio name/logo -->
     <div class="left"><a href="/">Sarang Nayak</a></div>
+
+    <!-- Right side: external profile links -->
     <div class="right">
       <a href="https://github.com/sarangnayakbala" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-github-alt"></i><span>Github</span>
@@ -37,7 +49,10 @@
     </div>
   </nav>
 
+  <!-- ===== MAIN CONTENT ===== -->
   <main>
+
+    <!-- === HERO SECTION === -->
     <section class="hero-section">
       <div class="text">
         <h2>Hallo, Ich bin Sarang 👋🏻</h2>
@@ -45,17 +60,22 @@
           Full Stack Developer | Java Backend Specialist |
           MERN Stack Expert | Competitive Programmer | Scalable Web App Enthusiast
         </p>
+
+        <!-- Quick navigation links -->
         <div class="links">
           <a href="#skills"><i class="fa-solid fa-code"></i><span>Skills</span></a>
           <a href="#testimony"><i class="fa-solid fa-pen"></i><span>About</span></a>
           <a href="#contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
         </div>
       </div>
+
+      <!-- Headshot / profile image -->
       <div class="headshot">
         <img src="images/hero-headshot.webp" alt="Sarang Nayak Bala"/>
       </div>
     </section>
 
+    <!-- === SKILLS SECTION === -->
     <section id="skills" class="skills-section hidden">
       <h2>Skills</h2>
       <div class="text">
@@ -66,6 +86,8 @@
           designing efficient architectures, and developing APIs.
         </p>
       </div>
+
+      <!-- Skills grid with icons -->
       <div class="cells">
         <div class="cell"><img src="images/html-logo.webp" alt="HTML" /><span>HTML</span></div>
         <div class="cell"><img src="images/css-logo.webp" alt="CSS" /><span>CSS</span></div>
@@ -76,14 +98,19 @@
       </div>
     </section>
 
+    <!-- === ABOUT SECTION === -->
     <section id="testimony" class="testimony-section hidden">
       <h2>About Me</h2>
       <div class="group">
+
+        <!-- Left side: profile details -->
         <div class="person-details">
           <img src="images/fight club.jpeg" alt="Image of Sarang"/>
           <p><strong>Sarang Nayak</strong></p>
           <p>Software Developer</p>
         </div>
+
+        <!-- Right side: description -->
         <div class="text">
           <p>
             As a fresher, I am eager to contribute to meaningful projects, learn
@@ -98,9 +125,12 @@
       </div>
     </section>
 
+    <!-- === CONTACT SECTION === -->
     <section id="contact" class="contact-section hidden">
       <h2>Contact</h2>
       <div class="group">
+
+        <!-- Contact info -->
         <div class="text">
           <p>Designed & Developed by<br/>
             <a href="mailto:sarangnayak268@gmail.com">Sarang Nayak</a></p>
@@ -111,25 +141,32 @@
           </address>
         </div>
 
+        <!-- Contact form (uses formsubmit.co service) -->
         <form action="https://formsubmit.co/sarangnayak269@gmail.com" method="POST">
+          <!-- Name input -->
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
 
+          <!-- Email input -->
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required />
 
+          <!-- Message input -->
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
 
+          <!-- Hidden settings for formsubmit -->
           <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html" />
           <input type="hidden" name="_captcha" value="false" />
 
+          <!-- Submit button -->
           <button type="submit">Send Message</button>
         </form>
       </div>
     </section>
   </main>
   
+  <!-- External JS file -->
   <script src="script.js"></script>
 </body>
 </html>
