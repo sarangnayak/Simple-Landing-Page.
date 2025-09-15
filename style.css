@@ -1,5 +1,6 @@
 /* === VARIABLES & GLOBAL STYLES === */
 :root {
+    /* Theme colors (easy to change site-wide) */
     --bg-color: #f8f9fa;
     --primary-text-color: #212529;
     --secondary-text-color: #6c757d;
@@ -15,7 +16,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 body {
@@ -26,13 +27,13 @@ body {
 }
 
 main {
-    max-width: 1100px;
+    max-width: 1100px; /* Keeps content centered and not too wide */
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 section {
-    padding: 6rem 0;
+    padding: 6rem 0; /* Spacing between sections */
 }
 
 h2 {
@@ -43,12 +44,14 @@ h2 {
 
 /* === ANIMATIONS === */
 .hidden {
+    /* Initial hidden state for scroll reveal effect */
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .show {
+    /* State after animation is triggered */
     opacity: 1;
     transform: translateY(0);
 }
@@ -59,15 +62,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    position: sticky;
+    position: sticky; /* Navbar sticks to top on scroll */
     top: 0;
     background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
     z-index: 100;
     transition: box-shadow 0.3s ease;
 }
 
 nav.scrolled {
+    /* Shadow appears when scrolling down */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -98,7 +102,7 @@ nav .right a:hover {
     display: flex;
     align-items: center;
     gap: 4rem;
-    min-height: 90vh;
+    min-height: 90vh; /* Take up most of viewport */
 }
 
 .hero-section .text h2 {
@@ -129,7 +133,7 @@ nav .right a:hover {
 
 .hero-section .links a:hover {
     background-color: #0056b3;
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Lift effect */
 }
 
 .hero-section .headshot img {
@@ -151,7 +155,7 @@ nav .right a:hover {
 
 .skills-section .cells {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
     gap: 1.5rem;
 }
 
@@ -168,7 +172,7 @@ nav .right a:hover {
 }
 
 .skills-section .cell:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Lift effect */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -178,7 +182,8 @@ nav .right a:hover {
 }
 
 /* === TESTIMONY & CONTACT SECTION === */
-.testimony-section .group, .contact-section .group {
+.testimony-section .group, 
+.contact-section .group {
     display: flex;
     gap: 4rem;
     align-items: flex-start;
@@ -187,10 +192,12 @@ nav .right a:hover {
     border-radius: 12px;
     border: 1px solid var(--border-color);
 }
+
 .person-details {
     text-align: center;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents shrinking in flex layout */
 }
+
 .person-details img {
     width: 120px;
     height: 120px;
@@ -198,15 +205,20 @@ nav .right a:hover {
     object-fit: cover;
     margin-bottom: 1rem;
 }
+
 .testimony-section .text p {
     color: var(--secondary-text-color);
 }
+
 .testimony-section .text p:not(:last-child) {
     margin-bottom: 1.5rem;
 }
-.contact-section .text, .contact-section a {
+
+.contact-section .text, 
+.contact-section a {
     color: var(--secondary-text-color);
 }
+
 .contact-section a {
     color: var(--accent-color);
 }
@@ -215,13 +227,16 @@ nav .right a:hover {
 form {
     width: 100%;
 }
+
 form label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--secondary-text-color);
     font-weight: 600;
 }
-form input, form textarea {
+
+form input, 
+form textarea {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1.5rem;
@@ -231,11 +246,14 @@ form input, form textarea {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
 }
-form input:focus, form textarea:focus {
+
+form input:focus, 
+form textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Glow effect */
 }
+
 form button {
     width: 100%;
     padding: 1rem;
@@ -248,13 +266,17 @@ form button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 form button:hover {
     background-color: #0056b3;
 }
 
 /* === RESPONSIVENESS === */
 @media (max-width: 900px) {
-    .hero-section, .testimony-section .group, .contact-section .group {
+    /* Stack hero + contact + about sections vertically */
+    .hero-section, 
+    .testimony-section .group, 
+    .contact-section .group {
         flex-direction: column;
     }
     .hero-section {
@@ -264,7 +286,9 @@ form button:hover {
         text-align: center;
     }
 }
+
 @media (max-width: 600px) {
+    /* Mobile-specific tweaks */
     body {
         font-size: 14px;
     }
