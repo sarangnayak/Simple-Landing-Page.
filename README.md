@@ -17,5 +17,3 @@ A clean, responsive landing page built with HTML and CSS. This project demonstra
 - **CSS3** - Modern styling with Flexbox/Grid
 - **Font Awesome** - Icons
 - **Google Fonts** - Typography
-
-## 📁 Project Structure
