@@ -18,6 +18,13 @@ A clean, responsive landing page built with HTML and CSS. This project demonstra
 - **Font Awesome** - Icons
 - **Google Fonts** - Typography
 
+📱 Responsive Breakpoints
+Mobile: < 768px
+
+Tablet: 768px - 1024px
+
+Desktop: > 1024px
+
 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -30,3 +37,5 @@ Commit your changes (git commit -m 'Add some AmazingFeature')
 Push to the branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request.
+
+
